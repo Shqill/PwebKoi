@@ -1,0 +1,380 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.pop-up{
+    display: none;
+    margin-left: 500px;
+    margin-top: 200px;
+
+}
+
+.bg{
+    display: flex;
+    flex-direction: row;
+    margin-top: 90px;
+    width: 100%;
+    height: 100%;
+}
+.bg1{
+    font-size: 40px;
+    padding-top: 100px;
+    padding-left: 50px;
+    width: 50%;
+}
+.bg1 h1{
+    font-weight: bold;
+}
+.bg1 h2{
+    font-weight: lighter;
+}
+.bg1 button{
+    margin-top: 30px;
+    border-radius: 7px;
+    background: white;
+    border: black;
+    border-style: solid;
+    width: 300px;
+    height: 80px;
+    font-size: 30px;
+}
+.bg2{
+    padding-top: 10px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    padding: 20px 100px;
+    background:  black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: center;
+    z-index: 99;
+}
+
+.Logo img{
+    height: 70px;
+}
+
+.navigation {
+    margin-right: 200px;
+}
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px; 
+    
+}
+
+.navigation a::after {
+    content:'';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: black;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+
+.section-2{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.article-box{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    background-color: white;
+    height: 200px;
+    width: 93%;
+    border-radius: 9px;
+    margin-left: 40px;
+    padding-left: 30px;
+}
+.article-box p{
+    font-size: 40px;
+    font-weight: bold;
+}
+.article-box h2{
+    font-size: 25px;
+    font-weight: lighter;
+}
+.article-box button{
+    height: 50px;
+    width: 300px;
+    color: #fff;
+    border-radius:20px;
+    background-color: black;
+    font-size: 20px;
+    font-weight: lighter;
+}
+.category-box{
+    height: 500px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+}
+.category-box p{
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+}
+.category-menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.category{
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 250px;
+}
+.category a{
+    padding-top: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 50px;
+}
+.category img{
+    margin-bottom: 10px;
+}
+#koi{
+    margin-bottom: 15px;
+}
+.show-btn{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+  .show-btn, .pop-up{
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+  }
+  
+  input[type="checkbox"]{
+    display: none;
+  }
+  .pop-up{
+    left: 200px;
+    right: 0;
+    top: 160px;
+    display: none;
+    background: #fff;
+    width: 410px;
+    padding: 30px;
+    border: solid;
+  }
+  .pop-up .close-btn{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .pop-up .close-btn:hover{
+    color: #3498db;
+  }
+  .pop-up .text{
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .pop-up form{
+    margin-top: -20px;
+  }
+  .pop-up form .data{
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+  }
+  form .data label{
+    font-size: 18px;
+  }
+  form .data input{
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 17px;
+    border: 1px solid silver;
+  }
+  form .data input:focus{
+    border-color: black;
+    border-bottom-width: 2px;
+  }
+  form .forgot-pass{
+    margin-top: -8px;
+  }
+  form .forgot-pass a{
+    color: black;
+    text-decoration: none;
+  }
+  form .forgot-pass a:hover{
+    text-decoration: underline;
+  }
+  form .btn{
+    margin: 30px 0;
+    height: 45px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  form .btn .inner{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    z-index: -1;
+    background: black;
+    transition: all 0.4s;
+  }
+  form .btn:hover .inner{
+    left: 0;
+  }
+  form .btn button{
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  form .signup-link{
+    text-align: center;
+  }
+  a.signup-btn{
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+  }
+
+  .section-3{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.white-bar{
+  height: 628px;
+  background-color: #fff;
+}
+.black-bar{
+  height: 728px;
+  background-color: black;
+}
+.white-bar img{
+  margin-top: 90px;
+  height: 120px;
+}
+
+.red-bar{
+  position: absolute;
+  background-color: red;
+  height: 500px;
+  width: 75%;
+  margin-left: 180px;
+  margin-top: 100px;
+  border-radius: 20px;
+  text-align: left;
+  font-size: 33px;
+  font-weight: lighter;
+  padding-left: 20px;
+  color: #fff;
+}
+.red-bar center{
+  font-weight: bold;
+  font-size: 40px;
+}
+#Contact{
+  color: #fff;
+  font-weight: bold;
+  margin-top: 240px;
+  font-size: 40px;
+}
+.contact-bar{
+  background-color: white;
+  height: 247px;
+  width:867px ;
+  border-radius: 20px;
+  margin-left: 30px;
+}
+.detail-contact{
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  padding-left: 40px;
+}
+.detail-contact p{
+  margin-top: 17px;
+  margin-left: 30px;
+  font-size: 25px;
+}
+  
+ 
