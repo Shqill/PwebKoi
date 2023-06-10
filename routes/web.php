@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\SejarahController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,23 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/obat', function () {
-    return view('Obat');
-});
-Route::get('/home', function () {
-    return view('Homepage');
-});
-Route::get('/pakan', function () {
-    return view('Pakan');
-});
-Route::get('/sejarah', function () {
-    return view('Sejarah');
-});
-Route::get('/varietas', function () {
-    return view('Varietas');
-});
 
 
+// Login, Logout & Register
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/logout', [AuthController::class, 'logout']);
+Route::post('/create', [AuthController::class, 'register']);
+
+// Home
+Route::get('/home', [PageController::class, 'home']);
+Route::get('/sejarah', [PageController::class, 'sejarah']);

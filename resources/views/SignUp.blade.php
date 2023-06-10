@@ -24,7 +24,7 @@
         <a href="#about-us">About Us</a>
         <a href="#contact">Contact</a>
         @if (Auth::check())
-        <a href="/logout" >Logout</a>
+        <a href="{{url('logout')}}" onclick="OpenForm()">Logout</a>
         @else
         <a href="#" onclick="OpenForm()">Login</a>
         @endif
@@ -111,7 +111,7 @@
   <div class="pop-up" id="pop-up">
     <label class="close-btn fas fa-times" title="close" onclick="CloseForm()"></label>
     <div class="text">Login Form</div>
-    <form method="POST" action="/login">
+    <form method="POST" action="{{url('home')}}">
       @csrf
       <div class="data">
         <label>Email </label>
@@ -124,9 +124,9 @@
       <div class="forgot-pass">
         <a href="#">Forgot Password?</a>
       </div>
-      @if (session()->has('error_message'))
+      @if (session()->has('error_massage'))
       <div style="background-color: red">
-        {{session()->get('error_message')}}
+        {{session()->get('error_massage')}}
       </div>
       @endif
       <div class="btn">
@@ -142,7 +142,7 @@
   <div class="pop-up" id="sign-up">
     <label class="close-btn fas fa-times" title="close" onclick="CloseSign()"></label>
     <div class="text">SignUp Form</div>
-    <form method="POST" action="/create">
+    <form method="POST" action="{{url('home')}}">
       @csrf
       <div class="data">
         <label>Email</label>
